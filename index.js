@@ -4,11 +4,13 @@ const app = express()
 const router = express.Router()
 const cors = require('cors')
 
-
-app.use(cors({
-    origin: '*',
-    methods: "GET,POST,DELETE,OPTIONS,PUT"
-}))
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE")
+    res.header("Access-Control-Allow-Headers", "Content-Type")
+    app.use(cors())
+    next()
+})
 
 router.get("/", (req ,res)=>{
     res.sendFile(path.join(__dirname + "/index.html"))
