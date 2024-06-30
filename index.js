@@ -4,10 +4,10 @@ const app = express()
 const router = express.Router()
 
 router.get("/", (req ,res)=>{
-    res.sendFile(path.join(__dirname + "/pages/index.html"))
+    res.sendFile(path.join(__dirname + "index.html"))
 })
 router.get("/contato", (req ,res)=>{
-    res.sendFile(path.join(__dirname + "/pages/contato.html"))
+    res.sendFile(path.join(__dirname + "contato.html"))
 })
 app.use(router)
 app.listen(process.env.PORT || 3333, ()=>{
