@@ -6,7 +6,7 @@ const router = express.Router()
 
 app.use(cors({
     origin: '*'
-}))*/
+}))
 
 router.get("/", (req ,res)=>{
     res.sendFile(path.join(__dirname + "/index.html"))
