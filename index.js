@@ -4,13 +4,15 @@ const app = express()
 const router = express.Router()
 const cors = require('cors')
 
-app.use(cors())
+app.use(cors({
+    origin: '*'
+}))
 
 router.get("/", (req ,res)=>{
-    res.sendFile(path.join(__dirname + "index.html"))
+    res.sendFile(path.join(__dirname + "/index.html"))
 })
 router.get("/contato", (req ,res)=>{
-    res.sendFile(path.join(__dirname + "contato.html"))
+    res.sendFile(path.join(__dirname + "/contato.html"))
 })
 app.use(router)
 app.listen(process.env.PORT || 3333, ()=>{
