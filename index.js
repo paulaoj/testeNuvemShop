@@ -5,7 +5,7 @@ const router = express.Router()
 const cors = require('cors')
 
 app.use(cors({
-    origin: '*'
+    origin: 'https://paulaoj.github.io/testeNuvemShop/'
 }))
 
 router.get("/", (req ,res)=>{
