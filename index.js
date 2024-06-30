@@ -2,6 +2,9 @@ const express = require("express")
 const path = require("path")
 const app = express()
 const router = express.Router()
+const cors = require('cors')
+
+app.use(cors())
 
 router.get("/", (req ,res)=>{
     res.sendFile(path.join(__dirname + "index.html"))
