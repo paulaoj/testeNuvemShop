@@ -4,8 +4,10 @@ const app = express()
 const router = express.Router()
 const cors = require('cors')
 
+
 app.use(cors({
-    origin: 'https://paulaoj.github.io/testeNuvemShop/'
+    origin: '*',
+    methods: "GET,POST,DELETE,OPTIONS,PUT"
 }))
 
 router.get("/", (req ,res)=>{
